@@ -5,9 +5,14 @@ import Timer from './components/Timer';
 
 const App: React.FC = () => {
   const [time, setTime] = useState(25 * 60);
+  const [pause, setPause] = useState(true);
+
+  const handleClick = () => {
+    setPause(prev => !prev);
+  }
 
   useEffect(() => {
-    if (time < 1) {
+    if (time < 1 || pause) {
       return;
     }
 
@@ -16,11 +21,11 @@ const App: React.FC = () => {
     }, 1000);
   
     return () => clearInterval(timer);
-  }, [time]);
+  }, [time, pause]);
 
   return (
     <div className="App">
-      <Timer time={time} />
+      <Timer time={time} handleClick={handleClick}/>
     </div>
   );
 }

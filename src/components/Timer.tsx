@@ -2,13 +2,14 @@ import getFormattedTime from '../helpers/getFormattedTime';
 
 interface Props {
   time: number
+  handleClick: () => void
 }
 
-const Timer: React.FC<Props> = ({ time }) => {
+const Timer: React.FC<Props> = ({ time, handleClick }) => {
   const formattedTime = getFormattedTime(time);
 
   return (
-    <button>{formattedTime}</button>
+    <button onClick={handleClick}>{formattedTime}</button>
   )
 }
 
