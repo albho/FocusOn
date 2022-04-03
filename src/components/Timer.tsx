@@ -1,6 +1,14 @@
-const Timer = () => {  
+import getFormattedTime from '../helpers/getFormattedTime';
+
+interface Props {
+  time: number
+}
+
+const Timer: React.FC<Props> = ({ time }) => {
+  const formattedTime = getFormattedTime(time);
+
   return (
-    <button>25:00</button>
+    <button>{formattedTime}</button>
   )
 }
 

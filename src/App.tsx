@@ -1,12 +1,26 @@
+import { useState, useEffect } from 'react';
+
 import './App.css';
-// import useToggle from './hooks/useToggle'
 import Timer from './components/Timer';
 
-function App() {
+const App: React.FC = () => {
+  const [time, setTime] = useState(25 * 60);
+
+  useEffect(() => {
+    if (time < 1) {
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setTime(prev => prev - 1);
+    }, 1000);
+  
+    return () => clearInterval(timer);
+  }, [time]);
 
   return (
     <div className="App">
-      <Timer />
+      <Timer time={time} />
     </div>
   );
 }
