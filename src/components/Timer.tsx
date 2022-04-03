@@ -1,4 +1,4 @@
-const Timer = () => {
+const Timer = () => {  
   return (
     <button>25:00</button>
   )
