@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import './App.css';
+import Status from './components/Status';
 import Timer from './components/Timer';
 
 const App: React.FC = () => {
@@ -25,6 +26,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      <Status />
       <Timer time={time} handleClick={handleClick}/>
     </div>
   );
