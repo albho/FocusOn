@@ -7,6 +7,7 @@ import Timer from './components/Timer';
 const App: React.FC = () => {
   const [time, setTime] = useState(25 * 60);
   const [pause, setPause] = useState(true);
+  const [status, setStatus] = useState('Pause'); // focus, break, long break, pause
 
   const handleClick = () => {
     setPause(prev => !prev);
@@ -26,7 +27,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Status />
+      <Status status={status} />
       <Timer time={time} handleClick={handleClick}/>
     </div>
   );

@@ -1,10 +1,14 @@
 import React from 'react'
 import Typography from '@mui/material/Typography';
 
-const Status: React.FC = () => {
+interface Props {
+  status: string
+}
+
+const Status: React.FC<Props> = ({ status }) => {
   return (
-    <Typography variant='h3' component='h1'>Status</Typography>
+    <Typography variant='h3' component='h1'>{status}</Typography>
   )
 }
 
-export default Status
+export default Status;
