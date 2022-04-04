@@ -11,8 +11,8 @@ const Timer: React.FC<Props> = ({ time, handleClick }) => {
   const formattedTime = getFormattedTime(time);
 
   return (
-    <Typography variant='h1' component={Button} onClick={handleClick}>{formattedTime}</Typography>
+    <Typography variant='h2' style={{ fontSize: '10rem' }} component={Button} onClick={handleClick}>{formattedTime}</Typography>
   )
 }
 
-export default Timer
+export default Timer;
