@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Status from './components/Status';
 import Timer from './components/Timer';
+import Greeting from './components/Greeting';
 
 const FOCUS_LENGTH = 25 * 60;
 const BREAK_LENGTH = 5 * 60;
@@ -49,6 +50,7 @@ const App: React.FC = () => {
     <div className="App">
       <Status status={status} />
       <Timer time={time} handleClick={handleClick}/>
+      <Greeting />
     </div>
   );
 }
