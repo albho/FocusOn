@@ -8,7 +8,12 @@ import Greeting from './components/Greeting';
 const FOCUS_LENGTH = 25 * 60;
 const BREAK_LENGTH = 5 * 60;
 
-const cycle = [
+interface CycleItem {
+  status: string;
+  time: number;
+}
+
+const cycle: CycleItem[] = [
   { status: 'Focus', time: FOCUS_LENGTH },
   { status: 'Break', time: BREAK_LENGTH },
 ]
