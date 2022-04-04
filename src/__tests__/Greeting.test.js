@@ -2,9 +2,21 @@ import { render, screen } from '@testing-library/react';
 import Greeting from '../components/Greeting';
 
 describe('Greeting', () => {
-  test('on initial render, the the greeting says Hello!', () => {
+  test('Appropriate greeting is shown based on time', () => {
     render(<Greeting />);
 
-    expect(screen.getByRole('heading')).toHaveTextContent('Hello!');
+    const today = new Date();
+    const currentHour = today.getHours();
+    let currentText = 'Good afternoon!';
+
+    if (currentHour < 12) {
+      currentText = 'Good morning!';
+    }
+
+    if (currentHour < 12) {
+      currentText = 'Good evening!';
+    }
+
+    expect(screen.getByRole('heading')).toHaveTextContent(currentText);
   });
 });
