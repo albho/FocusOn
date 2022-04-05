@@ -3,7 +3,6 @@ import './App.css';
 import Status from './components/Status';
 import Timer from './components/Timer';
 import Greeting from './components/Greeting';
-import Progress from './components/Progress';
 
 import Stack from '@mui/material/Stack';
 
@@ -58,8 +57,7 @@ const App: React.FC = () => {
       <Stack direction='column' alignItems='flex-start' p={2} sx={{ height: '100vh', background: '#def' }}>
         <Greeting />
         <Status status={status} />
-        <Timer time={time} handleClick={handleClick}/>
-        <Progress history={history} time={time} />
+        <Timer time={time} handleClick={handleClick} />
       </Stack>
     </div>
   );
