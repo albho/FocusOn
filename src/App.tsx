@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-
 import './App.css';
 import Status from './components/Status';
 import Timer from './components/Timer';
 import Greeting from './components/Greeting';
+import Progress from './components/Progress';
 
-const FOCUS_LENGTH = 25 * 60;
-const BREAK_LENGTH = 5 * 60;
+import Stack from '@mui/material/Stack';
+
+const FOCUS_LENGTH = 5;
+const BREAK_LENGTH = 3;
 
 interface CycleItem {
   status: string;
@@ -53,9 +55,12 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Status status={status} />
-      <Timer time={time} handleClick={handleClick}/>
-      <Greeting />
+      <Stack direction='column' alignItems='flex-start' p={2} sx={{ height: '100vh', background: '#def' }}>
+        <Greeting />
+        <Status status={status} />
+        <Timer time={time} handleClick={handleClick}/>
+        <Progress history={history} />
+      </Stack>
     </div>
   );
 }
