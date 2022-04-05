@@ -59,7 +59,7 @@ const App: React.FC = () => {
         <Greeting />
         <Status status={status} />
         <Timer time={time} handleClick={handleClick}/>
-        <Progress history={history} />
+        <Progress history={history} time={time} />
       </Stack>
     </div>
   );
