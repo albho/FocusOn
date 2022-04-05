@@ -20,10 +20,10 @@ const cycle: CycleItem[] = [
   { status: 'Break', time: BREAK_LENGTH },
 ]
 
-const App: React.FC = () => {
-  const initialTimer = cycle[0].time;
-  const initialStatus = cycle[0].status;
-  
+const initialTimer: number = cycle[0].time;
+const initialStatus: string = cycle[0].status;
+
+const App: React.FC = () => {  
   const [history, setHistory] = useState(1);
   const [pause, setPause] = useState(true);
   const [time, setTime] = useState(initialTimer);
