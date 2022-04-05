@@ -7,8 +7,8 @@ import Progress from './components/Progress';
 
 import Stack from '@mui/material/Stack';
 
-const FOCUS_LENGTH = 5;
-const BREAK_LENGTH = 3;
+const FOCUS_LENGTH = 25 * 60;
+const BREAK_LENGTH = 5 * 60;
 
 interface CycleItem {
   status: string;
